@@ -8,7 +8,7 @@
       <input type="text" placeholder="Digite seu email" />
       <button>ASSINAR ></button>
     </div>
-    <div>
+    <div class="flex gap-36 pt-10">
       <div class="lista">
         <h2>POKEMON TCG</h2>
         <div class="colecoes">
@@ -16,7 +16,27 @@
           <span>Evoluões Prismáticas</span>
           <span>Fagulhas Impetuosas</span>
           <span>Coroa Estelar</span
-          ><span>Fa ábulas Nebulosas</span>
+          ><span>Fábulas Nebulosas</span>
+        </div>
+      </div>
+      <div class="lista">
+        <h2>BRINQUEDOS E PELÚCIAS</h2>
+        <div class="colecoes">
+          <span>Amigos de Jornada</span>
+          <span>Evoluões Prismáticas</span>
+          <span>Fagulhas Impetuosas</span>
+          <span>Coroa Estelar</span
+          ><span>Fábulas Nebulosas</span>
+        </div>
+      </div>
+      <div class="lista">
+        <h2>POKEDEX</h2>
+        <div class="colecoes">
+          <span>Amigos de Jornada</span>
+          <span>Evoluões Prismáticas</span>
+          <span>Fagulhas Impetuosas</span>
+          <span>Coroa Estelar</span
+          ><span>Fábulas Nebulosas</span>
         </div>
       </div>
     </div>
@@ -26,7 +46,7 @@
 .footer {
   background-color: #383838;
   width: 100vw;
-  height: 20rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   padding-top: 20px;
@@ -42,6 +62,7 @@ h1 {
   margin-left: 20px;
 }
 input {
+  background-color: white;
   width: 20rem;
   height: 2.3rem;
   padding-left: 10px;
