@@ -8,7 +8,7 @@
       <input type="text" placeholder="Digite seu email" />
       <button>ASSINAR ></button>
     </div>
-    <div class="flex gap-36 pt-10">
+    <div class="list flex gap-36 pt-10">
       <div class="lista">
         <h2>POKEMON TCG</h2>
         <div class="colecoes">
@@ -46,7 +46,7 @@
 .footer {
   background-color: #383838;
   width: 100vw;
-  height: 25rem;
+  height: auto;
   display: flex;
   flex-direction: column;
   padding-top: 20px;
@@ -113,4 +113,44 @@ h2 {
     font-size: 1rem;
     color: white;
   }
+  @media (max-width: 783px) {
+    .list{
+      gap: 3rem;
+      margin-left: 0.8rem;
+    }
+  }
+  @media (max-width: 541px) {
+    .assinatura{
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      
+    }
+    .assinatura button{
+      width: 20rem;
+    }
+  }
+  @media (max-width: 423px) {
+    h1{
+      font-size: 1.5rem;
+      margin: 0px;
+    }
+    .list{
+      flex-direction: column;
+    }
+  }
+
+@media (max-width: 333px) {
+  h1{
+    font-size: 1.2rem;
+    margin: 0px;
+  }
+  .list{
+    flex-direction: column;
+  }
+  .assinatura button, input{
+    width: 15rem;
+  }
+
+}
 </style>

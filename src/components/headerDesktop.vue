@@ -17,13 +17,19 @@
             POKEMON TCG
             <ul class="sub-list-menu">
               <li>
-                <router-link to="/" class="list-item"><span class="item">CURTOS</span></router-link>
+                <router-link to="/" class="list-item"><span class="item">Amigos de Jornada</span></router-link>
               </li>
               <li>
-                <router-link to="/" class="list-item"><span class="item">MEDIOS</span></router-link>
+                <router-link to="/" class="list-item"><span class="item">Evoluções Prismáticas</span></router-link>
               </li>
               <li>
-                <router-link to="/" class="list-item"><span class="item">LONGOS</span></router-link>
+                <router-link to="/" class="list-item"><span class="item">Fagulhas Impetuosas</span></router-link>
+              </li>
+              <li>
+                <router-link to="/" class="list-item"><span class="item">Coroa Estelar</span></router-link>
+              </li>
+              <li>
+                <router-link to="/" class="list-item"><span class="item">Fábulas Nebulosas</span></router-link>
               </li>
             </ul>
             
@@ -32,31 +38,19 @@
             BRINQUEDOS E PELÚCIAS
             <ul class="sub-list-menu">
               <li>
-                <router-link to="/" class="list-item"><span class="item">CURTOS</span></router-link>
+                <router-link to="/" class="list-item"><span class="item">Pequenos</span></router-link>
               </li>
               <li>
-                <router-link to="/" class="list-item"><span class="item">MEDIOS</span></router-link>
+                <router-link to="/" class="list-item"><span class="item">Medios</span></router-link>
               </li>
               <li>
-                <router-link to="/" class="list-item"><span class="item">LONGOS</span></router-link>
+                <router-link to="/" class="list-item"><span class="item">Grandes</span></router-link>
               </li>
             </ul>
             
           </li>
-          <li class="item drop-item">
+          <li class="item">
             POKEDEX
-            <ul class="sub-list-menu">
-              <li>
-                <router-link to="/" class="list-item"><span class="item">CURTOS</span></router-link>
-              </li>
-              <li>
-                <router-link to="/" class="list-item"><span class="item">MEDIOS</span></router-link>
-              </li>
-              <li>
-                <router-link to="/" class="list-item"><span class="item">LONGOS</span></router-link>
-              </li>
-            </ul>
-            
           </li>
         </ul>
       </div>
