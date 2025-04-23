@@ -4,7 +4,7 @@
     <div class="top">
       <span class="">APROVEITE DESCONTO NO PIX - ENVIO GRÁTIS EM COMPRAS A PARTIR DE R$189,90</span>
     </div>
-    <div class="header">
+    <div class="header justify-around">
       <div class="logo">
         <img src="../assets/images/bandomonpng.png" alt="BANDOMON">
       </div>

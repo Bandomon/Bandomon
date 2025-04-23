@@ -52,6 +52,7 @@
   padding-top: 20px;
   align-items: center;
   gap: 10px;
+  padding-bottom: 2rem;
 }
 
 h1 {

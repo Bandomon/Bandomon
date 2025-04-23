@@ -1,0 +1,56 @@
+<template>
+    <div class="w-full overflow-hidden relative">
+      <div
+        ref="carousel"
+        class="custom-scroll flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full"
+      >
+        <div
+          v-for="(item, index) in items"
+          :key="index"
+          class="flex-shrink-0 w-full snap-start"
+        >
+          <img :src="item" alt="" class="w-full h- object-cover" />
+        </div>
+      </div>
+  
+      <!-- Optional navigation buttons -->
+      <button
+        class="absolute text-white cursor-pointer left-2 top-1/2 transform -translate-y-1/2 bg-neutral-700 px-2 py-1 rounded-full"
+        @click="scrollLeft"
+      >
+        ‹
+      </button>
+      <button
+        class="absolute text-white cursor-pointer right-2 top-1/2 transform -translate-y-1/2 bg-neutral-700 px-2 py-1 rounded-full"
+        @click="scrollRight"
+      >
+        ›
+      </button>
+    </div>
+  </template>
+  
+  <script setup>
+  import { ref } from 'vue'
+  
+  const carousel = ref(null)
+  const items = [    
+    'src/assets/images/pikachu.jpg',
+    'src/assets/images/pismEvo.jpg',
+    'src/assets/images/temporalForces.jpg',
+  ]
+  
+  const scrollLeft = () => {
+    carousel.value.scrollBy({ left: -carousel.value.offsetWidth, behavior: 'smooth' })
+  }
+  const scrollRight = () => {
+    carousel.value.scrollBy({ left: carousel.value.offsetWidth, behavior: 'smooth' })
+  }
+  </script>
+<style>
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #f1ee2b transparent;
+}
+</style>
+
+  

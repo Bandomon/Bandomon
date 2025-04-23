@@ -1,12 +1,11 @@
 <script setup>
 import { RouterView } from "vue-router";
-import headerDesktop from "./components/headerDesktop.vue";
+import HeaderCompo from "./components/HeaderCompo.vue";
 import footerComponent from "./components/footerComponent.vue"
-import headerMobile from "./components/headerMobile.vue";
 </script>
 
 <template>
-  <headerMobile />
+  <HeaderCompo/>
   <router-view></router-view>
   <footerComponent />
 </template>
