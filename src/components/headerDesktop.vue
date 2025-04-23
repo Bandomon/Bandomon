@@ -79,14 +79,14 @@
     font-family: 'Inter';
     font-weight: 500;
     font-size: 1rem;
-    color: rgb(0, 0, 0);
+    color: white;
     margin-left: 20px;
   }
 
   .sub-list-menu {
     position: absolute;
     display: none;
-    background-color: white;
+    background-color: #383838;
     list-style: none;
   }
   .drop-item:hover .sub-list-menu {
@@ -105,12 +105,19 @@
     width: 400px;
     height: 30px;
     border-radius: 5px;
-    border: none;
+    border-bottom: 1px solid white;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     padding-left: 10px;
     margin-left: 20px;
+    color: rgb(255, 255, 255);
+    opacity: 1;
   }
   .search-bar input:focus{
     outline: 2px solid #ffdb0c;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
   }
 
 
@@ -124,7 +131,7 @@
 
   .header{
     width: 100vw;
-    background-color:#ededed ;
+    background-color:#383838 ;
     display: flex;
     height: 10vh;
     align-items: center;
