@@ -1,5 +1,6 @@
+
 <template>
-    <div class="w-full overflow-hidden relative">
+    <div class="w-full overflow-hidden relative" :class="tamanhoTela ? 'mt-32' : 'mt-0'">
       <div
         ref="carousel"
         class="custom-scroll flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full"
@@ -30,7 +31,7 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue'
+  import { ref, onMounted, onUnmounted } from 'vue'
   
   const carousel = ref(null)
   const items = [    
@@ -45,6 +46,21 @@
   const scrollRight = () => {
     carousel.value.scrollBy({ left: carousel.value.offsetWidth, behavior: 'smooth' })
   }
+
+
+const tamanhoTela = ref(window.innerWidth > 1100)
+
+function handleResize() {
+  tamanhoTela.value = window.innerWidth > 1100
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
   </script>
 <style>
 .custom-scroll {

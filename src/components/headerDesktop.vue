@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <div class="component">
+  <div class="component fixed z-10 top-0">
     <div class="top">
       <span class="">APROVEITE DESCONTO NO PIX - ENVIO GRÁTIS EM COMPRAS A PARTIR DE R$189,90</span>
     </div>

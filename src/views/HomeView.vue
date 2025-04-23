@@ -1,9 +1,9 @@
 <script setup>
-import Carousel from '@/components/Carousel.vue';
+import carouselComponent from '@/components/carouselComponent.vue';
 </script>
 
 <template>
-    <Carousel/>
+<carouselComponent/>
 </template>
 <style scoped>
 </style>
