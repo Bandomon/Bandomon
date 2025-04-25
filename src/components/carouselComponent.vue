@@ -1,6 +1,6 @@
 
 <template>
-    <div class="w-full overflow-hidden relative" :class="tamanhoTela ? 'mt-32' : 'mt-0'">
+    <div class="w-full overflow-hidden relative" :class="tamanhoTela ? 'mt-28' : 'mt-0'">
       <div
         ref="carousel"
         class="custom-scroll flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full"

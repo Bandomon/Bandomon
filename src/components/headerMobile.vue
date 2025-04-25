@@ -22,7 +22,7 @@ function toggleMenu() {
       <div class="relative inline-block text-left">
         <button
           @click="toggleMenu"
-          class="p-2 rounded hover:bg-gray-200 focus:outline-none"
+          class="p-2 rounded hover:bg-gray-700 rounded-xl focus:outline-none"
         >
           <svg class="w-8" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -36,17 +36,17 @@ function toggleMenu() {
 
         <div
           v-if="isOpen"
-          class="dropdown-open absolute right-0 mt-2 w-56 rounded-md shadow-lg z-50"
+          class="dropdown-open absolute  right-0 mt-2 w-56 rounded-md shadow-lg z-50"
         >
           <ul class="py-2">
             <li>
-              <a href="#" class="item-dropdown block px-4 py-2 hover:bg-gray-300">Brinquedos e Pelúcias</a>
+              <a href="#" class="item-dropdown block px-4 py-2 hover:bg-gray-700">Brinquedos e Pelúcias</a>
             </li>
             <li>
-              <a href="#" class="item-dropdown block px-4 py-2 hover:bg-gray-300">Pokedex</a>
+              <a href="#" class="item-dropdown block px-4 py-2 hover:bg-gray-700">Pokedex</a>
             </li>
             <li>
-              <a href="#" class="item-dropwdown block px-4 py-2 hover:bg-gray-300">Pokemon TCG</a>
+              <a href="#" class="item-dropwdown block px-4 py-2 hover:bg-gray-700">Pokemon TCG</a>
             </li>
           </ul>
         </div>
@@ -76,14 +76,14 @@ function toggleMenu() {
     font-family: 'Inter';
     font-weight: 500;
     font-size: 1rem;
-    color: rgb(0, 0, 0);
+    color: white;
     margin-left: 20px;
   }
 
   .sub-list-menu {
     position: absolute;
     display: none;
-    background-color: white;
+    background-color: #353535;
     list-style: none;
   }
   .drop-item:hover .sub-list-menu {
@@ -102,12 +102,19 @@ function toggleMenu() {
     width: 400px;
     height: 30px;
     border-radius: 5px;
-    border: none;
+    border-bottom: 2px solid white;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     padding-left: 10px;
     margin-left: 20px;
+    color: white
   }
   .search-bar input:focus{
     outline: 2px solid #ffdb0c;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
   }
 
 
@@ -115,13 +122,13 @@ function toggleMenu() {
     font-family: 'Inter';
     font-weight: 700;
     font-size: 2rem;
-    color: black;
+
     margin-left: 20px;
   }
 
   .header{
     width: 100vw;
-    background-color:#ededed ;
+    background-color:#353535 ;
     display: flex;
     height: 10vh;
     align-items: center;
@@ -139,7 +146,8 @@ function toggleMenu() {
   }
 
   .dropdown-open {
-    background-color: #ededed;
+    background-color: #353535;
+    color: white;
   }
 
   @media (max-width: 672px) {

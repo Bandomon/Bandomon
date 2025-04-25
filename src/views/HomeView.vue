@@ -3,10 +3,54 @@ import carouselComponent from '@/components/carouselComponent.vue';
 </script>
 
 <template>
-<carouselComponent/>
-<div class="w-full h-36">
+    <carouselComponent />
+    <div class="beneficios w-full h-auto flex flex-row justify-around items-center">
+        <img src="../assets/images/Beneficios.png" alt="">
+    </div>
+    <div class="mt-10 mb-10">
+        <div class="flex flex-row items-center justify-around flex-wrap gap-10">
+            <div class="ajuste">
+                <span class="rubik ml-4 ">BRINQUEDOS</span>
+                <img src="../assets/images/pikachuToy.jpg" alt="" class="w-96" />
+            </div>
+            <div class="ajuste">
+                <span class="rubik ml-30 ">TCG</span>
+                <img src="../assets/images/pokemonBooster.jpg" alt="" class="w-96" />
+            </div>
+            <div class="ajuste">
+                <span class="rubik ml-12">PELÚCIAS</span>
+                <img src="../assets/images/cubonePelucia.jpg" alt="" class="w-96" />
+            </div>
+        </div>
+    </div>
 
-</div>
 </template>
 <style scoped>
+.beneficios {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.rubik {
+    font-family: "Rubik Mono One", monospace;
+    font-weight: bolder;
+    font-style: normal;
+    position: absolute;
+    font-size: 48px;
+    margin-top: 4rem;
+    backdrop-filter: blur(4px);
+    border: 2px solid white;
+    padding: 0px 2rem;
+    color: white;
+}
+.ajuste:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+
+}
+.ajuste:hover span{
+    color: #ffdb0c;
+    transition: 0.5s;
+    border: 2px solid #ffdb0c;
+}
 </style>
