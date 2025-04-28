@@ -35,7 +35,7 @@
             
           </li>
           <li class="item drop-item">
-            BRINQUEDOS E PELÚCIAS
+            BRINQUEDOS  
             <ul class="sub-list-menu">
               <li>
                 <router-link to="/" class="list-item"><span class="item">Pequenos</span></router-link>
@@ -50,7 +50,7 @@
             
           </li>
           <li class="item">
-            POKEDEX
+            PELÚCIAS
           </li>
         </ul>
       </div>

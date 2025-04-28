@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="lista">
-        <h2>BRINQUEDOS E PELÚCIAS</h2>
+        <h2>BRINQUEDOS </h2>
         <div class="colecoes">
           <span>Amigos de Jornada</span>
           <span>Evoluões Prismáticas</span>
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="lista">
-        <h2>POKEDEX</h2>
+        <h2>PELÚCIAS</h2>
         <div class="colecoes">
           <span>Amigos de Jornada</span>
           <span>Evoluões Prismáticas</span>
