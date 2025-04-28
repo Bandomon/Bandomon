@@ -22,7 +22,7 @@
         ‹
       </button>
       <button
-        class="absolute text-white cursor-pointer  right-2 top-1/2 transform -translate-y-1/2 bg-neutral-700 px-2 py-1 rounded-full"
+        class="absolute text-white cursor-pointer  right-6 top-1/2 transform -translate-y-1/2 bg-neutral-700 px-2 py-1 rounded-full"
         @click="scrollRight"
       >
         ›
