@@ -3,7 +3,9 @@ import carouselComponent from '@/components/carouselComponent.vue';
 </script>
 
 <template>
+    <div class="overflow-hidden w-full">
     <carouselComponent />
+</div>
     <div class="beneficios w-full h-auto flex flex-row justify-around items-center">
         <img src="../assets/images/Beneficios.png" alt="">
     </div>
@@ -26,6 +28,7 @@ import carouselComponent from '@/components/carouselComponent.vue';
 
 </template>
 <style scoped>
+
 .beneficios {
     margin-top: 2vw;
     margin-bottom: 2vw;
@@ -53,4 +56,9 @@ import carouselComponent from '@/components/carouselComponent.vue';
     transition: 0.5s;
     border: 2px solid #ffdb0c;
 }
+@media (max-width: 672px) {
+    .beneficios {
+    display: none;
+    }
+  }
 </style>

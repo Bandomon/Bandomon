@@ -6,6 +6,12 @@ const isOpen = ref(false)
 function toggleMenu() {
   isOpen.value = !isOpen.value
 }
+
+if (isOpen.value) {
+  document.body.style.overflowX = 'hidden';
+} else {
+  document.body.style.overflowX = 'visible';
+}
 </script>
 <template>
   <div class="component">
@@ -16,9 +22,13 @@ function toggleMenu() {
       <div class="logo">
         <img src="../assets/images/bandomonpng.png" alt="BANDOMON">
       </div>
-      <div class="search-bar">
-        <input type="text" placeholder="O que você procura?" />
-      </div>
+      <div class="search-bar flex ">
+        <img src="../assets/images/search.png" alt="">
+
+        <input type="text" placeholder="O QUE VOCÊ PROCURA?" />
+        <div class="barra absolute self-center ">
+        </div>
+        </div>
       <div class="relative inline-block text-left">
         <button
           @click="toggleMenu"
@@ -38,19 +48,29 @@ function toggleMenu() {
           v-if="isOpen"
           class="dropdown-open absolute  right-0 mt-2 w-56 rounded-md shadow-lg z-50"
         >
-          <ul class="py-2">
-            <li>
-              <a href="#" class="item-dropdown block px-4 py-2 hover:bg-gray-700">Brinquedos e Pelúcias</a>
+          <ul class="py-2 flex flex-col gap-5 w-56 items-center">
+            <li class="item drop-item text-center">
+              <img src="../assets/images/🦆 icon _user_.png" alt="">
+              <span>Login/Cadastro</span>
             </li>
-            <li>
-              <a href="#" class="item-dropdown block px-4 py-2 hover:bg-gray-700">Pokedex</a>
+            <li class="item drop-item">
+              <img src="../assets/images/SUPORTE.png" alt="">
+              <span>Suporte</span>            
             </li>
-            <li>
-              <a href="#" class="item-dropwdown block px-4 py-2 hover:bg-gray-700">Pokemon TCG</a>
+            <li class="item drop-item">
+              <img src="../assets/images/CARRINHO.png" alt="">
+              <span>Carrinho</span>
             </li>
           </ul>
         </div>
       </div>
+    </div>
+    <div class="w-full items-nav h-10 bg-zinc-800">
+      <ul class="flex text-white justify-around items-center h-full">
+        <li>BRINQUEDOS</li>
+        <li>POKEMON TCG</li>
+        <li>POKEDEX</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -72,13 +92,6 @@ function toggleMenu() {
     flex-direction: column;
   }
 
-  .item{
-    font-family: 'Inter';
-    font-weight: 500;
-    font-size: 1rem;
-    color: white;
-    margin-left: 20px;
-  }
 
   .sub-list-menu {
     position: absolute;
@@ -96,25 +109,63 @@ function toggleMenu() {
   .list-menu {
     cursor: pointer;
   }
+  
+  .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+  .item img{
+    width: 28px;
+  }
 
 
+  .barra{
+    width: 2px;
+    height: 30px;
+    background-color: transparent;
+    margin-left: 67px;
+    transition: 0.2s all ease;
+  }
+  .search-bar input:focus + .barra{
+    background-color: #ffdb0c;
+  }
   .search-bar input{
+    font-family: 'Inter';
+    font-weight: 300;
     width: 400px;
     height: 30px;
-    border-radius: 5px;
-    border-bottom: 2px solid white;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    padding-left: 10px;
+    border-radius: 8px;
     margin-left: 20px;
-    color: white
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    background-color: #272727;
+    padding-left: 60px;
+    padding-bottom: 2px;
+    transition: 0.2s all ease;
+    outline: 2px solid transparent;
+  }
+  .search-bar input::-webkit-input-placeholder{
+    color: #ffffff;
+    transition: 0.2s all ease;
+  }
+  .search-bar img{
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    position: absolute;
+    margin-left: 35px
   }
   .search-bar input:focus{
     outline: 2px solid #ffdb0c;
-    border: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-
+    border: none;
+  }
+  .search-bar input:focus::-webkit-input-placeholder{
+    color: #ffdb0c;
   }
 
 
@@ -146,6 +197,7 @@ function toggleMenu() {
   }
 
   .dropdown-open {
+    display: flex;
     background-color: #353535;
     color: white;
   }
@@ -153,6 +205,7 @@ function toggleMenu() {
   @media (max-width: 672px) {
     .search-bar input{
         width:200px;
+        font-size: 12px;
     }
     .top span{
         font-size: 0.6rem;
@@ -168,6 +221,10 @@ function toggleMenu() {
     .header{
         justify-content: space-between;
     }
+    .items-nav{
+    font-size: 12px;
+    }
+
   }
   @media (max-width: 412px) {
     .top span{

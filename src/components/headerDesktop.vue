@@ -5,145 +5,143 @@
       <span class="">APROVEITE DESCONTO NO PIX - ENVIO GRÁTIS EM COMPRAS A PARTIR DE R$189,90</span>
     </div>
     <div class="header justify-around">
-      <div class="logo">
-        <img src="../assets/images/bandomonpng.png" alt="BANDOMON">
+      <div class="flex items-center">
+        <div class="logo">
+          <img src="../assets/images/bandomonpng.png" alt="BANDOMON">
+        </div>
+        <div class="search-bar flex">
+          <img src="../assets/images/search.png" alt="">
+
+          <input type="text" placeholder="O QUE VOCÊ PROCURA?" />
+          <div class="barra absolute self-center ">
+          </div>
+        </div>
       </div>
-      <div class="search-bar">
-        <input type="text" placeholder="O que você procura?" />
-      </div>
-      <div class="menu">
-        <ul class="uList">
+      <div class="menu flex">
+        <ul class="uList flex gap-10">
           <li class="item drop-item">
-            POKEMON TCG
-            <ul class="sub-list-menu">
-              <li>
-                <router-link to="/" class="list-item"><span class="item">Amigos de Jornada</span></router-link>
-              </li>
-              <li>
-                <router-link to="/" class="list-item"><span class="item">Evoluções Prismáticas</span></router-link>
-              </li>
-              <li>
-                <router-link to="/" class="list-item"><span class="item">Fagulhas Impetuosas</span></router-link>
-              </li>
-              <li>
-                <router-link to="/" class="list-item"><span class="item">Coroa Estelar</span></router-link>
-              </li>
-              <li>
-                <router-link to="/" class="list-item"><span class="item">Fábulas Nebulosas</span></router-link>
-              </li>
-            </ul>
-            
+            <img src="../assets/images/🦆 icon _user_.png" alt="">
           </li>
           <li class="item drop-item">
-            BRINQUEDOS E PELÚCIAS
-            <ul class="sub-list-menu">
-              <li>
-                <router-link to="/" class="list-item"><span class="item">Pequenos</span></router-link>
-              </li>
-              <li>
-                <router-link to="/" class="list-item"><span class="item">Medios</span></router-link>
-              </li>
-              <li>
-                <router-link to="/" class="list-item"><span class="item">Grandes</span></router-link>
-              </li>
-            </ul>
-            
+            <img src="../assets/images/SUPORTE.png" alt="">
           </li>
           <li class="item">
-            POKEDEX
+            <img src="../assets/images/CARRINHO.png" alt="">
           </li>
         </ul>
       </div>
+    </div>
+    <div class="w-full items-nav h-10 bg-zinc-800">
+      <ul class="flex text-white justify-around items-center h-full">
+        <li>BRINQUEDOS</li>
+        <li>POKEMON TCG</li>
+        <li>POKEDEX</li>
+      </ul>
     </div>
   </div>
 </template>
 
 <style scoped>
+.items-nav {
+  font-family: 'Inter';
+  font-weight: 300;
+}
 
-
-.logo img{
+.logo img {
   width: 200px;
 }
 
-.uList{
+.uList {
   display: flex;
   list-style: none;
 }
 
 .component {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+}
 
-  .item{
-    font-family: 'Inter';
-    font-weight: 500;
-    font-size: 1rem;
-    color: white;
-    margin-left: 20px;
-  }
-
-  .sub-list-menu {
-    position: absolute;
-    display: none;
-    background-color: #383838;
-    list-style: none;
-  }
-  .drop-item:hover .sub-list-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+.item {
+  width: 28px
+}
 
 
-  .list-menu {
-    cursor: pointer;
-  }
+.barra {
+  width: 2px;
+  height: 30px;
+  background-color: transparent;
+  margin-left: 67px;
+  transition: 0.2s all ease;
+}
+
+.search-bar input:focus+.barra {
+  background-color: #ffdb0c;
+}
+
+.search-bar input {
+  font-weight: 300;
+  font-family: 'Inter';
+  width: 400px;
+  height: 30px;
+  border-radius: 8px;
+  margin-left: 20px;
+  color: rgb(255, 255, 255);
+  opacity: 1;
+  background-color: #272727;
+  padding-left: 60px;
+  padding-bottom: 2px;
+  transition: 0.2s all ease;
+  outline: 2px solid transparent;
+}
+
+.search-bar input::-webkit-input-placeholder {
+  color: #ffffff;
+  transition: 0.2s all ease;
+}
+
+.search-bar img {
+  width: 18px;
+  height: 18px;
+  align-self: center;
+  position: absolute;
+  margin-left: 35px
+}
+
+.search-bar input:focus {
+  outline: 2px solid #ffdb0c;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+}
+
+.search-bar input:focus::-webkit-input-placeholder {
+  color: #ffdb0c;
+}
 
 
-  .search-bar input{
-    width: 400px;
-    height: 30px;
-    border-radius: 5px;
-    border-bottom: 1px solid white;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    padding-left: 10px;
-    margin-left: 20px;
-    color: rgb(255, 255, 255);
-    opacity: 1;
-  }
-  .search-bar input:focus{
-    outline: 2px solid #ffdb0c;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border: none;
-  }
+.logo {
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 2rem;
+  color: black;
+  margin-left: 20px;
+}
 
+.header {
+  width: 100vw;
+  background-color: #383838;
+  display: flex;
+  height: 10vh;
+  align-items: center;
+}
 
-  .logo{
-    font-family: 'Inter';
-    font-weight: 700;
-    font-size: 2rem;
-    color: black;
-    margin-left: 20px;
-  }
+.top {
+  background-color: #ffdb0c;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Inter';
+  font-weight: 500;
+  padding: 7px;
 
-  .header{
-    width: 100vw;
-    background-color:#383838 ;
-    display: flex;
-    height: 10vh;
-    align-items: center;
-  }
-
-  .top{
-    background-color: #ffdb0c;
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Inter';
-    font-weight: 500;
-    padding: 7px;
-
-  }
+}
 </style>
