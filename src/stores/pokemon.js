@@ -1,30 +1,23 @@
 import { defineStore } from 'pinia'
-import { reactive, ref } from 'vue'
+import { reactive} from 'vue'
 
-export const useCarStore = defineStore('pokemon', () => {
-  const selectedCategory = ref(null)
+export const usePokemonStore = defineStore('pokemon', () => {
   const pokemon = reactive([
     {
       id: 1,
       name: 'Pikachu Fogoso Safado - Amarelo',
-      price: 129.90,
-      imageURL: '//pikachuaction.png',
+      price: 99.90,
+      imageURL: '/images/bandomonpng.png',
       description:
-        '',
-      category: 'Action Figure',
-      stock: 12,
-    },
-    {
-        id: 2,
-        name: 'Charmander do CV - 157',
-        price: 89.90,
-        imageURL: '',
-        description:
-          '',
-        category: 'Action Figure',
-        stock: 12,
-      }
+        'Action Figure do Pikachu.',
+      category: 'ActionFigure',
+      stock: 5,
+      variants: [
+        { id: 1, color: 'yellow', image: '/images/bandomonpng.png' },
+        { id: 2, color: 'red', image: '/images/cubonePelucia.jpg' }
+      ]
+    }
   ])
 
-  return { selectedCategory, pokemon }
+  return { pokemon }
 })
