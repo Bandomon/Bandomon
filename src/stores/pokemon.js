@@ -9,7 +9,7 @@ export const usePokemonStore = defineStore('pokemon', () => {
             name: 'Box Treinador Avançado Amigos de Jornada',
             price: 349.90,
             imageURL: 'images/boosterboxamigos.png',
-            description: 'descricao',
+            description: 'Produto em Português. O Coleção Treinador Avançado - Escarlate e Violeta 9 - Amigos de Jornada contém: - 20 pacotes de booster de Escarlate e Violeta - Amigos de Jornada do Pokémon Estampas Ilustradas; - 1 carta holográfica promocional com arte expandida de Zorua e N- 65 capas para cartas de Zoroark e N;- 6 dados para usar como contadores de dano; 1 dado para jogada de moeda válido para competições;- 2 marcadores de condições de plástico;- 1 caixa de colecionador para guardar tudo;- 1 carta codificada para o Pokémon Estampas Ilustradas Live.',
             category: 'Pokemon TCG',
             stock: 100
           },
@@ -213,121 +213,122 @@ export const usePokemonStore = defineStore('pokemon', () => {
           },
           {
             id: 24,
-            name: 'Figura Super Articulada Tyranitar',
-            price: 349.90,
-            imageURL: 'public/images/bonecotyranitar.png',
+            name: 'Pelúcia Bulbasaur',
+            price: 149.90,
+            imageURL: 'public/images/peluciabulba.png',
             description: 'descricao',
-            category: 'Pokemon Figures',
-            stock: 90
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 25,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Venusaur',
+            price: 149.90,
+            imageURL: 'public/images/peluciavenu.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 26,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Charmander',
+            price: 149.90,
+            imageURL: 'public/images/peluciacharmander.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 27,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Charizard',
+            price: 149.90,
+            imageURL: 'public/images/peluciacharizard.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 28,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Mega Charizard X',
+            price: 149.90,
+            imageURL: 'public/images/peluciamegacha.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 29,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Squirtle',
+            price: 149.90,
+            imageURL: 'public/images/peluciasqui.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 30,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Blastoise',
+            price: 149.90,
+            imageURL: 'public/images/peluciablast.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 31,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Pikachu',
+            price: 149.90,
+            imageURL: 'public/images/peluciapika.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 32,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Dragonite',
+            price: 149.90,
+            imageURL: 'public/images/peluciadrago.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 33,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Snorlax',
+            price: 149.90,
+            imageURL: 'public/images/peluciasnor.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 34,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Mew',
+            price: 149.90,
+            imageURL: 'public/images/peluciamew.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
             id: 35,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            name: 'Pelúcia Azumarill',
+            price: 149.90,
+            imageURL: 'public/images/peluciaazuma.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
           {
-            id: 36,
-            name: 'Box Treinador Avançado',
-            price: 349.90,
-            imageURL: 'images/boosterboxamigos.jpg',
+            id: 35,
+            name: 'Pelúcia Eevee',
+            price: 149.90,
+            imageURL: 'public/images/peluciaeevee.png',
             description: 'descricao',
-            category: 'Pokemon TCG',
-            stock: 100
+            category: 'Pokemon Plush',
+            stock: 50
           },
+         
 
     ])
 })
