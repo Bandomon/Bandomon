@@ -94,7 +94,7 @@
   outline: 2px solid transparent;
 }
 
-.search-bar input::-webkit-input-placeholder {
+.search-bar input::placeholder {
   color: #ffffff;
   transition: 0.2s all ease;
 }
@@ -114,7 +114,7 @@
   border: none;
 }
 
-.search-bar input:focus::-webkit-input-placeholder {
+.search-bar input:focus::placeholder {
   color: #ffdb0c;
 }
 
