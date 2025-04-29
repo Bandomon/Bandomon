@@ -1,5 +1,5 @@
 <template>
-    <div class="product-page">
+    <div class="product-page mt-44 mb-44">
         <div class="cart" v-show="false">Cart: {{ cart }}</div>
 
         <div class="product-image">
@@ -46,8 +46,12 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { usePokemonStore } from '@/stores/pokemon'
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import AlertMessage from '@/components/AlertMessage.vue'
+
+onMounted(()=> {
+    console.log(store.pokemon.find(item => item.id === Number(route.params.id).imageURL))
+})
 
 const store = usePokemonStore()
 const route = useRoute()

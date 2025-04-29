@@ -1,17 +1,3 @@
-<template>
-    <div class="alert-messages">
-        <div v-for="(message, index) in messages" :key="index" class="alert-message"
-            :style="{ opacity: message.opacity, transform: `translateX(${message.position})` }">
-            <div class="alert-content">
-                <span>{{ message.text }}</span>
-                <div class="progress-bar">
-                    <div class="progress-fill" :style="{ width: message.progress + '%' }"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 
@@ -51,6 +37,20 @@ defineExpose({
     addMessage
 })
 </script>
+
+<template>
+    <div class="alert-messages">
+        <div v-for="(message, index) in messages" :key="index" class="alert-message"
+            :style="{ opacity: message.opacity, transform: `translateX(${message.position})` }">
+            <div class="alert-content">
+                <span>{{ message.text }}</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" :style="{ width: message.progress + '%' }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
 
 <style scoped>
 .alert-messages {
