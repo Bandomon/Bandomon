@@ -8,12 +8,12 @@ export const usePokemonStore = defineStore('pokemon', () => {
             id: 1,
             name: 'Box Treinador Avançado Amigos de Jornada',
             price: 349.90,
-            imageURL: new URL('images/pelucia.png', import.meta.url).href ,
+            imageURL: new URL('images/boosterboxamigos.png', import.meta.url).href ,
             description: 'Produto em Português. O Coleção Treinador Avançado - Escarlate e Violeta 9 - Amigos de Jornada contém: - 20 pacotes de booster de Escarlate e Violeta - Amigos de Jornada do Pokémon Estampas Ilustradas; - 1 carta holográfica promocional com arte expandida de Zorua e N- 65 capas para cartas de Zoroark e N;- 6 dados para usar como contadores de dano; 1 dado para jogada de moeda válido para competições;- 2 marcadores de condições de plástico;- 1 caixa de colecionador para guardar tudo;- 1 carta codificada para o Pokémon Estampas Ilustradas Live.',
             category: 'Pokemon TCG',
             stock: 100,
             variants: [
-              { id: 1, angle: 'front', image: new URL('images/pelucia.png', import.meta.url).href, },
+              { id: 1, angle: 'front', image: new URL('images/boosterboxamigos.png', import.meta.url).href, },
               { id: 2, angle: 'side', image: new URL('images/variantboxamigos.png', import.meta.url).href, }
             ]
           },
