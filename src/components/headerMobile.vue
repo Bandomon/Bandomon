@@ -21,45 +21,38 @@ if (isOpen.value) {
     <div class="header">
       <div class="logo">
         <router-link to="/">
-        <img src="../assets/images/bandomonpng.png" alt="BANDOMON"></router-link>
+          <img src="../assets/images/bandomonpng.png" alt="BANDOMON"></router-link>
       </div>
-      <SearchBar />
-      <div class="menu-hamburguer relative inline-block text-left">
-        <button
-          @click="toggleMenu"
-          class="p-2 rounded hover:bg-gray-700 rounded-xl focus:outline-none"
-        >
-          <svg class="w-8" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <path
-                fill="#77767b"
-                fill-rule="evenodd"
-                d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"
-              />
-            </g>
-          </svg>
-        </button>
+      <div class="flex">
+        <SearchBar />
+        <div class="menu-hamburguer relative inline-block text-left">
+          <button @click="toggleMenu" class="p-2 rounded hover:bg-gray-700 rounded-xl focus:outline-none">
+            <svg class="w-8" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path fill="#77767b" fill-rule="evenodd"
+                  d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z" />
+              </g>
+            </svg>
+          </button>
 
-        <div
-          v-if="isOpen"
-          class="dropdown-open absolute right-0 mt-2 w-56 rounded-md shadow-lg z-50"
-        >
-          <ul class="py-2 flex flex-col gap-5 w-56 items-center">
-            <li class="item drop-item text-center">
-              <img src="../assets/images/🦆 icon _user_.png" alt="" />
-              <span>Login/Cadastro</span>
-            </li>
-            <li class="item drop-item">
-              <img src="../assets/images/SUPORTE.png" alt="" />
-              <span>Suporte</span>
-            </li>
-            <li class="item drop-item">
-              <img src="../assets/images/CARRINHO.png" alt="" />
-              <span>Carrinho</span>
-            </li>
-          </ul>
+          <div v-if="isOpen" class="dropdown-open absolute right-0 mt-2 w-56 rounded-md shadow-lg z-50">
+            <ul class="py-2 flex flex-col gap-5 w-56 items-center">
+              <li class="item drop-item text-center">
+                <img src="../assets/images/🦆 icon _user_.png" alt="" />
+                <span>Login/Cadastro</span>
+              </li>
+              <li class="item drop-item">
+                <img src="../assets/images/SUPORTE.png" alt="" />
+                <span>Suporte</span>
+              </li>
+              <li class="item drop-item">
+                <img src="../assets/images/CARRINHO.png" alt="" />
+                <span>Carrinho</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -94,6 +87,7 @@ if (isOpen.value) {
   background-color: #353535;
   list-style: none;
 }
+
 .drop-item:hover .sub-list-menu {
   display: flex;
   flex-direction: column;
@@ -111,6 +105,7 @@ if (isOpen.value) {
   align-items: center;
   gap: 4px;
 }
+
 .item img {
   width: 28px;
 }
@@ -122,9 +117,11 @@ if (isOpen.value) {
   margin-left: 67px;
   transition: 0.2s all ease;
 }
-.search-bar input:focus + .barra {
+
+.search-bar input:focus+.barra {
   background-color: #ffdb0c;
 }
+
 .search-bar input {
   font-family: 'Inter';
   font-weight: 300;
@@ -140,10 +137,12 @@ if (isOpen.value) {
   transition: 0.2s all ease;
   outline: 2px solid transparent;
 }
+
 .search-bar input::-webkit-input-placeholder {
   color: #ffffff;
   transition: 0.2s all ease;
 }
+
 .search-bar img {
   width: 18px;
   height: 18px;
@@ -151,12 +150,14 @@ if (isOpen.value) {
   position: absolute;
   margin-left: 35px;
 }
+
 .search-bar input:focus {
   outline: 2px solid #ffdb0c;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border: none;
 }
+
 .search-bar input:focus::-webkit-input-placeholder {
   color: #ffdb0c;
 }
@@ -194,39 +195,39 @@ if (isOpen.value) {
 }
 
 @media (max-width: 672px) {
-  .search-bar input {
-    width: 200px;
-    font-size: 12px;
-  }
   .top span {
     font-size: 0.6rem;
   }
 }
+
 @media (max-width: 488px) {
   .search-bar {
     display: none;
   }
+
   .top span {
     font-size: 0.6rem;
   }
+
   .header {
     justify-content: space-between;
   }
+
   .items-nav {
     font-size: 12px;
   }
+
   .menu-hamburguer {
     margin-right: 1rem;
   }
-  .search-icon-mobile{
-    right: 8vw;
-  }
 }
+
 @media (max-width: 412px) {
   .top span {
     font-size: 0.5rem;
   }
 }
+
 @media (max-width: 346px) {
   .top span {
     display: none;

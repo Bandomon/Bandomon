@@ -355,8 +355,6 @@ onMounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    right: 18vw;
   }
   
   .search-bar {
@@ -422,7 +420,7 @@ onMounted(() => {
   }
 
   .search-icon-mobile {
-     right: 13vw;
+     position: relative;
   }
   .search-bar input {
     width: 100%;
@@ -434,8 +432,9 @@ onMounted(() => {
 
 @media (max-width: 696px) {
     .search-bar input {
-   
-    padding-left: 8vw;
+        padding-left: 8vw;
+  }
+  .search-icon-mobile {
   }
 }
 @media (max-width: 738px) {
