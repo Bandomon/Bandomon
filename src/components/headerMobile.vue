@@ -19,8 +19,9 @@ if (isOpen.value) {
       <span class="">APROVEITE DESCONTO NO PIX - ENVIO GRÁTIS EM COMPRAS A PARTIR DE R$189,90</span>
     </div>
     <div class="header">
-      <div class="logo">
-        <img src="../assets/images/bandomonpng.png" alt="BANDOMON">
+      <div  class="logo">
+        <router-link to="/">
+        <img src="../assets/images/bandomonpng.png" alt="BANDOMON"></router-link>
       </div>
       <div class="search-bar flex ">
         <img src="../assets/images/search.png" alt="">
@@ -67,9 +68,9 @@ if (isOpen.value) {
     </div>
     <div class="w-full items-nav h-10 bg-zinc-800">
       <ul class="flex text-white justify-around items-center h-full">
-        <li>BRINQUEDOS</li>
-        <li>POKEMON TCG</li>
-        <li>POKEDEX</li>
+        <li><router-link to="/brinquedos">BRINQUEDOS</router-link></li>
+        <li><router-link to="/cards">POKEMON TCG</router-link> </li>
+        <li><router-link to="/pelucias"> PELUCIAS</router-link></li>
       </ul>
     </div>
   </div>

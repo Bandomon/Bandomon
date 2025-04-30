@@ -1,5 +1,5 @@
 import {defineStore} from 'pinia'
-import {reactive} from 'vue'
+import {reactive, computed} from 'vue'
 
 export const usePokemonStore = defineStore('pokemon', () => {
     const pokemon = reactive([
@@ -476,5 +476,9 @@ export const usePokemonStore = defineStore('pokemon', () => {
          
 
     ])
-    return {pokemon}
+    const brinquedos = computed(() => pokemon.filter(item => item.category === 'Pokemon Figures'));
+    const pelucias = computed(() => pokemon.filter(item => item.category === 'Pokemon Plush'));
+    const tcg = computed(() => pokemon.filter(item => item.category === 'Pokemon TCG'));
+    
+    return {pokemon, brinquedos, pelucias, tcg}
 })

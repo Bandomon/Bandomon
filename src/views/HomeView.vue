@@ -1,5 +1,10 @@
 <script setup>
 import carouselComponent from '@/components/carouselComponent.vue';
+import cardComponent from '@/components/cardComponent.vue';
+import { usePokemonStore } from '@/stores/pokemon'
+
+
+const store = usePokemonStore()
 </script>
 
 <template>
@@ -9,21 +14,8 @@ import carouselComponent from '@/components/carouselComponent.vue';
     <div class="beneficios w-full h-auto flex flex-row justify-around items-center">
         <img src="../assets/images/Beneficios.png" alt="">
     </div>
-    <div class="mt-10 mb-10">
-        <div class="flex flex-row items-center justify-around flex-wrap gap-10">
-            <div class="ajuste">
-                <span class="rubik ml-4 ">BRINQUEDOS</span>
-                <img src="../assets/images/pikachuToy.jpg" alt="" class="w-96" />
-            </div>
-            <div class="ajuste">
-                <span class="rubik ml-30 ">TCG</span>
-                <img src="../assets/images/pokemonBooster.jpg" alt="" class="w-96" />
-            </div>
-            <div class="ajuste">
-                <span class="rubik ml-12">PELÚCIAS</span>
-                <img src="../assets/images/cubonePelucia.jpg" alt="" class="w-96" />
-            </div>
-        </div>
+    <div class="mt-10 mb-10 flex flex-wrap mx-20 gap-20 justify-center">
+        <cardComponent v-for="item in store.pokemon" :product="item" :key="item.id"></cardComponent>
     </div>
 
 </template>

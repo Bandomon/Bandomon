@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
 <template>
   <div class="component fixed z-10 top-0">
     <div class="top">
@@ -6,8 +8,9 @@
     </div>
     <div class="header justify-around">
       <div class="flex items-center">
-        <div class="logo">
-          <img src="../assets/images/bandomonpng.png" alt="BANDOMON">
+        <div  class="logo">
+          <router-link to="/">
+          <img src="../assets/images/bandomonpng.png" alt="BANDOMON"></router-link>
         </div>
         <div class="search-bar flex">
           <img src="../assets/images/search.png" alt="">
@@ -33,9 +36,9 @@
     </div>
     <div class="w-full items-nav h-10 bg-zinc-800">
       <ul class="flex text-white justify-around items-center h-full">
-        <li>BRINQUEDOS</li>
-        <li>POKEMON TCG</li>
-        <li>POKEDEX</li>
+        <li><router-link to="/brinquedos">BRINQUEDOS</router-link></li>
+        <li><router-link to="/cards">POKEMON TCG</router-link> </li>
+        <li><router-link to="/pelucias"> PELUCIAS</router-link></li>
       </ul>
     </div>
   </div>

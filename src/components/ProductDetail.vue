@@ -4,7 +4,7 @@
         <div class="cart" v-show="false">Cart: {{ cart }}</div>
 
         <div class="product-image">
-            <img :src="currentImage" :alt="product.name" />
+            <img class="img-product" :src="currentImage" :alt="product.name" />
         </div>
 
         <div class="product-info">
@@ -22,8 +22,13 @@
 
             <div class="sizes">
                 <div class="size-buttons flex-wrap">
-                    <div v-for="variant in product.variants" :key="variant.id" @mouseover="changeImage(variant.image)"
-                        class="color-circle mx-auto flex items-center justify-center"><img :src="variant.image" class="" alt=""></div>
+                    <div v-for="variant in product.variants" 
+     :key="variant.id" 
+     @mouseover="changeImage(variant.image)"
+     @mouseout="resetZoom"
+     class="color-circle mx-auto flex items-center justify-center">
+     <img :src="variant.image" alt="">
+</div>
                 </div>
             </div>
 
@@ -80,6 +85,19 @@ const decrement = () => {
 
 const changeImage = (newImage) => {
     currentImage.value = newImage
+    // Adicionar classe à imagem principal
+    const imgProduct = document.querySelector('.img-product')
+    if (imgProduct) {
+        imgProduct.classList.add('zoomed')
+    }
+}
+
+// Criar uma nova função para remover o zoom quando o mouse sair
+const resetZoom = () => {
+    const imgProduct = document.querySelector('.img-product')
+    if (imgProduct) {
+        imgProduct.classList.remove('zoomed')
+    }
 }
 
 const addToCart = () => {
@@ -106,11 +124,23 @@ const discountedPrice = computed(() => {
     align-items: flex-start;
     padding: 40px;
     gap: 60px;
-    position: relative;
 }
 
 .cart {
     display: none;
+}
+
+.zoomed {
+    transform: scale(1.05);
+    transition: 0.5s all ease;
+}
+
+.product-image{
+    max-height: 500px;
+    min-height: 500px;
+    background: #f7f7f7;
+    display: flex;
+    border-radius: 12px;
 }
 
 .product-image img {
@@ -118,8 +148,19 @@ const discountedPrice = computed(() => {
     height: auto;
     object-fit: cover;
     border-radius: 12px;
-    background: #f7f7f7;
     padding: 20px;
+    transition: 0.5s all ease;
+}
+
+.img-product:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.color-circle:hover .img-product {
+    transform: scale(1.05);
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .product-info {
@@ -207,6 +248,9 @@ h1 {
     display: inline-block;
     cursor: pointer;
     border: 1px solid #ccc;
+}
+.color-circle:hover .product-image img {
+    
 }
 
 .message {
