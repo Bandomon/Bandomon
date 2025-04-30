@@ -1,8 +1,6 @@
 <template>
     <div class="product-component flex justify-center items-center mt-50">
       <div class="product-page flex-wrap">
-        <div class="cart" v-show="cart > 0">Cart: {{ cart }}</div>
-  
         <div class="product-image">
           <img class="img-product" :src="currentImage" :alt="product?.name" />
         </div>
@@ -11,9 +9,9 @@
           <h1>{{ product.name }}</h1>
           <p class="category">{{ product.category }}</p>
   
-          <p v-if="product.stock > 10">In Stock</p>
-          <p v-else-if="product.stock > 1">Almost Out</p>
-          <p v-else>Out of Stock</p>
+          <p v-if="product.stock > 10" class="stock in-stock">Em Estoque</p>
+          <p v-else-if="product.stock > 1" class="stock low-stock">Quase Esgotado</p>
+          <p v-else class="stock out-of-stock">Fora de Estoque</p>
   
           <div class="price">
             <span class="discount-price">R$ {{ discountedPrice.toFixed(2).replace('.', ',') }} no Pix</span>
@@ -46,7 +44,7 @@
             @click="addToCart"
             :disabled="product.stock < 1"
           >
-            Add to cart
+            Adicionar ao carrinho
           </button>
         </div>
   
@@ -62,13 +60,14 @@
   import { ref, computed, onMounted, watch } from 'vue'
   import AlertMessage from '@/components/AlertMessage.vue'
   import { usePokemonStore } from '@/stores/pokemon'
+  import { useCartStore } from '@/stores/cartStore'
   
   const store = usePokemonStore()
+  const cartStore = useCartStore() // Usar a store do carrinho
   const route = useRoute()
   
   const productId = ref(Number(route.params.id))
   const quantity = ref(1)
-  const cart = ref(0)
   const alertMessage = ref(null)
   const currentImageSrc = ref('')
   
@@ -130,10 +129,21 @@
     if (imgProduct) imgProduct.classList.remove('zoomed')
   }
   
-  // Adiciona ao carrinho
+  // Adiciona ao carrinho usando a cartStore
   const addToCart = () => {
     if (product.value && product.value.stock > 0) {
-      cart.value += quantity.value
+      // Criar objeto do produto para adicionar ao carrinho
+      const productToAdd = {
+        id: product.value.id,
+        name: product.value.name,
+        price: product.value.price,
+        image: currentImageSrc.value // Usa a imagem atual (pode ser a variante selecionada)
+      }
+      
+      // Adicionar ao carrinho com a quantidade selecionada
+      cartStore.addToCart(productToAdd, quantity.value)
+      
+      // Mostrar mensagem de sucesso
       alertMessage.value.addMessage('Produto adicionado ao carrinho!')
     }
   }
@@ -146,10 +156,6 @@
     align-items: flex-start;
     padding: 40px;
     gap: 60px;
-  }
-  
-  .cart {
-    display: none;
   }
   
   .zoomed {
@@ -200,6 +206,23 @@
   .category {
     color: gray;
     margin-bottom: 20px;
+  }
+  
+  .stock {
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  
+  .in-stock {
+    color: #2ecc71;
+  }
+  
+  .low-stock {
+    color: #f39c12;
+  }
+  
+  .out-of-stock {
+    color: #e74c3c;
   }
   
   .price {
@@ -273,19 +296,6 @@
     border: 1px solid #ccc;
   }
   
-  .message {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #4caf50;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-  
   @media (max-width: 420px) {
     .product-page {
       width: 100%;
@@ -304,4 +314,3 @@
     }
   }
   </style>
-  

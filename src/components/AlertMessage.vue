@@ -1,93 +1,125 @@
-<script setup>
-import { ref } from 'vue'
-
-const messages = ref([])
-
-const addMessage = (text) => {
-    const newMessage = {
-        text,
-        progress: 100,
-        opacity: 1,
-        position: '100%',
-    }
-
-    messages.value.push(newMessage)
-
-    newMessage.position = '0%'
-
-    const duration = 3000
-    const interval = 30
-    const decrement = 100 / (duration / interval)
-
-    const timer = setInterval(() => {
-        newMessage.progress -= decrement
-        newMessage.opacity = newMessage.progress / 100
-
-        if (newMessage.progress <= 0) {
-            clearInterval(timer)
-            newMessage.position = '100%'
-            setTimeout(() => {
-                messages.value.shift()
-            }, 500)
-        }
-    }, interval)
-}
-
-defineExpose({
-    addMessage
-})
-</script>
-
+<!-- AlertMessage.vue -->
 <template>
-    <div class="alert-messages">
-        <div v-for="(message, index) in messages" :key="index" class="alert-message"
-            :style="{ opacity: message.opacity, transform: `translateX(${message.position})` }">
-            <div class="alert-content">
-                <span>{{ message.text }}</span>
-                <div class="progress-bar">
-                    <div class="progress-fill" :style="{ width: message.progress + '%' }"></div>
-                </div>
-            </div>
+    <div>
+      <transition name="fade">
+        <div v-if="isVisible" class="alert-message">
+          <div class="alert-content">
+            <span>{{ message }}</span>
+            <button @click="closeMessage" class="close-btn">&times;</button>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" :style="{ width: progressWidth + '%' }"></div>
+          </div>
         </div>
+      </transition>
     </div>
-</template>
-
-<style scoped>
-.alert-messages {
+  </template>
+  
+  <script setup>
+  import { ref, onBeforeUnmount } from 'vue';
+  
+  const message = ref('');
+  const isVisible = ref(false);
+  const progressWidth = ref(100);
+  const timeout = ref(null);
+  const interval = ref(null);
+  
+  // Adiciona uma mensagem e inicia o temporizador
+  const addMessage = (text) => {
+    message.value = text;
+    isVisible.value = true;
+    progressWidth.value = 100;
+    
+    // Limpa temporizadores existentes
+    clearTimeout(timeout.value);
+    clearInterval(interval.value);
+    
+    // Inicia a contagem regressiva
+    const duration = 3000; // 3 segundos
+    const steps = 100;
+    const stepTime = duration / steps;
+    
+    interval.value = setInterval(() => {
+      progressWidth.value -= 100 / steps;
+    }, stepTime);
+    
+    timeout.value = setTimeout(() => {
+      closeMessage();
+    }, duration);
+  };
+  
+  // Fecha a mensagem e limpa os temporizadores
+  const closeMessage = () => {
+    isVisible.value = false;
+    clearTimeout(timeout.value);
+    clearInterval(interval.value);
+  };
+  
+  // Limpa os temporizadores quando o componente é destruído
+  onBeforeUnmount(() => {
+    clearTimeout(timeout.value);
+    clearInterval(interval.value);
+  });
+  
+  // Expõe métodos para o componente pai
+  defineExpose({
+    addMessage,
+    closeMessage
+  });
+  </script>
+  
+  <style scoped>
+  .alert-message {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 9999;
-}
-
-.alert-message {
     background-color: #383838;
-    color: #ffffff;
-    padding: 16px 24px;
+    color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    min-width: 250px;
-    margin-bottom: 10px;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.alert-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.progress-bar {
-    height: 4px;
-    background-color: #555;
-    border-radius: 2px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    width: 300px;
+  }
+  
+  .alert-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    line-height: 1;
+  }
+  
+  .progress-bar {
+    height: 4px;
     width: 100%;
-}
-
-.progress-fill {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .progress {
     height: 100%;
     background-color: #ffdb0c;
-    transition: width 0.3s linear;
-}
-</style>
+    transition: width 0.1s linear;
+  }
+  
+  /* Animação de fade */
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .fade-enter-from, .fade-leave-to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  </style>
