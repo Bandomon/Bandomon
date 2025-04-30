@@ -1,5 +1,6 @@
 <template>
-    <div class="product-page mt-44 mb-44">
+    <div class="flex justify-center items-center mt-50">
+        <div class="product-page">
         <div class="cart" v-show="false">Cart: {{ cart }}</div>
 
         <div class="product-image">
@@ -20,10 +21,9 @@
             </div>
 
             <div class="sizes">
-                <p>Cores:</p>
                 <div class="size-buttons">
                     <div v-for="variant in product.variants" :key="variant.id" @mouseover="changeImage(variant.image)"
-                        class="color-circle" :style="{ backgroundColor: mapColor(variant.color) }"></div>
+                        class="color-circle mx-auto flex items-center justify-center"><img :src="variant.image" class="" alt=""></div>
                 </div>
             </div>
 
@@ -40,6 +40,7 @@
         </div>
 
         <AlertMessage ref="alertMessage" />
+    </div>
     </div>
 </template>
 
@@ -58,6 +59,7 @@ const store = usePokemonStore()
 const route = useRoute()
 
 const product = store.pokemon.find(item => item.id === Number(route.params.id))
+const valorProduto = product.price
 
 const quantity = ref(1)
 const cart = ref(0)
@@ -66,11 +68,13 @@ const alertMessage = ref(null)
 
 const increment = () => {
     quantity.value++
+    product.price = product.price + valorProduto
 }
 
 const decrement = () => {
     if (quantity.value > 1) {
         quantity.value--
+        product.price = product.price - valorProduto
     }
 }
 
@@ -92,10 +96,7 @@ const discountedPrice = computed(() => {
     return product.price * 0.90
 })
 
-const mapColor = (color) => {
-    if (color.toLowerCase() === 'amarelo') return 'yellow'
-    return color
-}
+
 </script>
 
 <style scoped>
@@ -201,9 +202,8 @@ h1 {
 }
 
 .color-circle {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
     display: inline-block;
     cursor: pointer;
     border: 1px solid #ccc;
