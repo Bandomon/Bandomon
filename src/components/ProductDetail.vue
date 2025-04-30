@@ -1,6 +1,6 @@
 <template>
-    <div class="flex justify-center items-center mt-50">
-        <div class="product-page">
+    <div class="product-component flex justify-center items-center mt-50">
+        <div class="product-page flex-wrap">
         <div class="cart" v-show="false">Cart: {{ cart }}</div>
 
         <div class="product-image">
@@ -21,7 +21,7 @@
             </div>
 
             <div class="sizes">
-                <div class="size-buttons">
+                <div class="size-buttons flex-wrap">
                     <div v-for="variant in product.variants" :key="variant.id" @mouseover="changeImage(variant.image)"
                         class="color-circle mx-auto flex items-center justify-center"><img :src="variant.image" class="" alt=""></div>
                 </div>
@@ -220,5 +220,23 @@ h1 {
     font-weight: bold;
     z-index: 10;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 420px) {
+    .product-page {
+        width: 100%;
+    }
+    .product-image img {
+        width: 100%;
+        height: auto;
+    }
+    .product-info {
+        max-width: 100%;
+    }
+}
+@media (max-width: 900px){
+    .product-component{
+        margin-top: 10px;
+    }
 }
 </style>
