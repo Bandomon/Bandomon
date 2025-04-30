@@ -1,6 +1,8 @@
 <script setup>
+import SearchBar from './SearchBar.vue'; // Import the SearchBar component
 import { RouterLink } from 'vue-router';
 </script>
+
 <template>
   <div class="component fixed z-10 top-0">
     <div class="top">
@@ -8,17 +10,12 @@ import { RouterLink } from 'vue-router';
     </div>
     <div class="header justify-around">
       <div class="flex items-center">
-        <div  class="logo">
+        <div class="logo">
           <router-link to="/">
           <img src="../assets/images/bandomonpng.png" alt="BANDOMON"></router-link>
         </div>
-        <div class="search-bar flex">
-          <img src="../assets/images/search.png" alt="">
-
-          <input type="text" placeholder="O QUE VOCÊ PROCURA?" />
-          <div class="barra absolute self-center ">
-          </div>
-        </div>
+        <!-- Replace the search bar with the new component -->
+        <SearchBar />
       </div>
       <div class="menu flex">
         <ul class="uList flex gap-10">
@@ -36,9 +33,9 @@ import { RouterLink } from 'vue-router';
     </div>
     <div class="w-full items-nav h-10 bg-zinc-800">
       <ul class="flex text-white justify-around items-center h-full">
-        <li><router-link to="/brinquedos">BRINQUEDOS</router-link></li>
+        <li><router-link to="/brinquedos">BRINQUEDOS</router-link> </li>
         <li><router-link to="/cards">POKEMON TCG</router-link> </li>
-        <li><router-link to="/pelucias"> PELUCIAS</router-link></li>
+        <li><router-link to="/pelucias">PELUCIAS</router-link> </li>
       </ul>
     </div>
   </div>
@@ -68,60 +65,6 @@ import { RouterLink } from 'vue-router';
   width: 28px
 }
 
-
-.barra {
-  width: 2px;
-  height: 30px;
-  background-color: transparent;
-  margin-left: 67px;
-  transition: 0.2s all ease;
-}
-
-.search-bar input:focus+.barra {
-  background-color: #ffdb0c;
-}
-
-.search-bar input {
-  font-weight: 300;
-  font-family: 'Inter';
-  width: 400px;
-  height: 30px;
-  border-radius: 8px;
-  margin-left: 20px;
-  color: rgb(255, 255, 255);
-  opacity: 1;
-  background-color: #272727;
-  padding-left: 60px;
-  padding-bottom: 2px;
-  transition: 0.2s all ease;
-  outline: 2px solid transparent;
-}
-
-.search-bar input::placeholder {
-  color: #ffffff;
-  transition: 0.2s all ease;
-}
-
-.search-bar img {
-  width: 18px;
-  height: 18px;
-  align-self: center;
-  position: absolute;
-  margin-left: 35px
-}
-
-.search-bar input:focus {
-  outline: 2px solid #ffdb0c;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border: none;
-}
-
-.search-bar input:focus::placeholder {
-  color: #ffdb0c;
-}
-
-
 .logo {
   font-family: 'Inter';
   font-weight: 700;
@@ -145,6 +88,5 @@ import { RouterLink } from 'vue-router';
   font-family: 'Inter';
   font-weight: 500;
   padding: 7px;
-
 }
 </style>
